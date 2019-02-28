@@ -14,6 +14,7 @@ grade1 = int(input("Please enter 1st Grades: "))
 grade2 = int(input("Please enter 2nd Grades: "))
 grade3 = int(input("Please enter 3rd Grades: "))
 
+#Averaging Grades, and printing out results
 averaged_grade = (grade1 + grade2 + grade3) / 3
 
 print("The averaged grade is ", format(averaged_grade, '.2f'), '%', sep='')

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Cameron Reading
 2/20/19
 Python 1 DATA 119 - Spring 2019
 Homework Week 3 
