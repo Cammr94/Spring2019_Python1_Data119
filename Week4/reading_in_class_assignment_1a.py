@@ -20,5 +20,8 @@ divide_by_400 = entered_year % 400
 if divide_by_4 == 0 and divide_by_100 == 0 and divide_by_400 ==0:
     print("February has 29 Days in", entered_year)
     
+elif divide_by_4 == 0 and divide_by_100 != 0:
+    print("February has 29 Days in", entered_year)
+    
 else:
     print("February has 28 Days in", entered_year)
