@@ -172,49 +172,15 @@ def break_into_list_of_words(string):
 	return list_of_words
 	# ^^^ YOU DO NOT HAVE TO CHANGE ANYTHING IN HERE ^^^
 
-
 # this function takes in a string and a list and counts how many times that
 # string shows up in that list
-    
-    
 def count_how_many_words(word_list, counting_string):
-    count = 0
-    
-    '''Will last until all of the words are looked at througout the poem
-    and count up the counter if the word matches the countin_string (ie the
-    word we are looking to count, ie, Raven)
-    '''
-    for current_word in word_list:
-        if counting_string == current_word:
-            count += 1                    
-        
-    return count
-        
-        
-    
+	return None # this is just here so the program still compiles
+
 def main():
-    
-    #Counting how often the word Raven appears both uppercase and lowercase
-    count = 0
-    words = break_into_list_of_words(THE_RAVEN)
-    counting_string = "Raven"
-    count = count_how_many_words(words, counting_string)
-    counting_string = "raven"
-    count += count_how_many_words(words, counting_string)
-    print('How many times the word "Raven" (or "raven") appears in Poe\'s "Raven":', count, "times!")
-
-    
-    #Counting how often Nevermore appears both upper and lowercase
-    count = 0
-    counting_string = "Nevermore"
-    count = count_how_many_words(words, counting_string)
-    counting_string = "nevermore"
-    count += count_how_many_words(words, counting_string)
-    print("How many times the word \"Nevermore\" (or \"nevermore\") appears in Poe's \"Raven\":", count, "times!")
-
-    
-	#print(words)
-
+	count = 0
+	words = break_into_list_of_words(THE_RAVEN)
+	# print(words)
 
 if __name__ == "__main__":
 	main()
