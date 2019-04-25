@@ -50,7 +50,12 @@ def create_chaaracter():
     player_dic = {}
     input("Ahhh a newcomer!\nWelcome welcome!")
     input("Now...Tell me about your self")
+    
+    #Concatenate the name with a string to allow input conversations!
+    
     player_name = input("Your Name: ")
+    player_dic["name"] = player_name
+    
     print("Choose a class!")
     print("(A) Barbarian")
     print("(B) Ranger")
@@ -87,19 +92,25 @@ def create_chaaracter():
             
     if class_choice == 'A':
         print("Barbarian Choosen")
+        player_dic['class'] = 'Barbarian'
+        player_dic = barbarian_create(player_dic)
         
     elif class_choice == 'B':
         print("Ranger Choosen")
-        
+        player_dic['class'] = 'Ranger'
     elif class_choice == 'C':
         print("Paladin Choosen")
-        
+        player_dic['class'] = 'Paladin'
     else:
         print("Rogue Choosen")
+        player_dic['class'] = 'Rogue'
         
     return player_dic
             
-    
+def barbarian_create (player_dic):    
+    print("Barbarian Choosen")
+
+
 def load_character():
     input("Oh its you! Welcome back...")
     input("...uh, remind me...")
