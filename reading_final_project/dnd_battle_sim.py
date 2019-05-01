@@ -924,7 +924,7 @@ def battle_sim (player_dic, enemy_dic):
         if player_defending == True:
             player_dic['AC'] = player_dic['AC'] - DEFEND_BONUS_AC
             player_defending = False
-            print("PLayer's AC: ", player_dic['AC'])
+#            print("PLayer's AC: ", player_dic['AC'])
         
 
         if enemy_dic['max_hp'] <= 0 or player_dic['hp_max'] <= 0:
@@ -941,7 +941,7 @@ def battle_sim (player_dic, enemy_dic):
 
         if enemy_defending == True:
             enemy_dic['enemy_ac'] = enemy_dic['enemy_ac'] - DEFEND_BONUS_AC
-            print("Enemy AC: ", enemy_dic['enemy_ac'])
+#            print("Enemy AC: ", enemy_dic['enemy_ac'])
             enemy_defending = False            
 
 
@@ -981,7 +981,7 @@ If the d20 roll is a 20 (Nat 20) a critical hit will occur and will double damag
 '''
 
 def attack_func(defender_ac, defender_hp, attacker_dmg_die, attacker_key_mod, attacker_weapon, attack_text):
-    roll_to_hit  = dice_rolls.roll_d20()
+    roll_to_hit = dice_rolls.roll_d20()
     print('roll to hit: ', roll_to_hit + attacker_key_mod)
     multiply_attack = 1
     
@@ -1009,8 +1009,8 @@ def attack_func(defender_ac, defender_hp, attacker_dmg_die, attacker_key_mod, at
        
         #Multiply damage, will be 1x unless its a CRIT!
         total_damage = multiply_attack * total_damage
-        
-        print('For ', total_damage, ' damage!')
+        damage_text = 'For ' + str(total_damage) + ' damage!'
+        input(damage_text)
             
 #If the roll to hit doesnt pass the defenders AC
     elif roll_to_hit == 1 or roll_to_hit + attacker_key_mod <= defender_ac:
@@ -1092,9 +1092,10 @@ All includes input validation from the user!
 
 def players_turn(player_dic, enemy_dic):
     
-    input("~~~~~PLAYER'S TURN~~~~~~~~\n")
+    print("~~~~~PLAYER'S TURN~~~~~~~~\n")
     
-    print("Current HP: ", player_dic['hp_max'])
+    print("Current HP: ", player_dic['hp_max'], sep = '')
+    print(enemy_dic['enemy_name'], "'s HP: ",enemy_dic['max_hp'], sep = '')
     print("(A) ATTACK    or   (B) DEFEND")
     player_choice = input("Your choice: ")
     char_defending = False
@@ -1137,7 +1138,7 @@ but chooses based on two factors.
 
 def enemy_turn(player_dic, enemy_dic, enemy_max_hp):
 
-    input('~~~~~ENEMIES TURN~~~~~~\n')
+    print('~~~~~ENEMIES TURN~~~~~~\n')
         
     enemy_choosing_num = 0
     char_defending = False
